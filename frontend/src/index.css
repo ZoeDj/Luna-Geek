@@ -1,0 +1,154 @@
+:root {
+  --brandBlue: #1b71b8;
+  --brandBackground: #f2daee;
+  --brandGrey: #232528;
+  --brandBlack: #000000;
+  --brandPink: #f2daee;
+  --brandAqua: #a2dcf3;
+  --brandRed: #ed4748;
+}
+
+html {
+  font-size: 62.5%; /*1 16px * 62.5 = 10px = 1rem */
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+body {
+  font: 1.6rem "Nunito Sans", Arial, Helvetica, sans-serif;
+  height: 100vh;
+  margin: 0;
+  color: var(--brandBlue);
+  background-color: var(--brandBackground);
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main" "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+.header {
+  grid-area: header;
+  background-color: var(--brandBlue);
+  color: var(--brandPink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.header-links a,
+a:link,
+a:visited {
+  color: var(--brandPink);
+}
+.header-links a:hover {
+  color: var(--brandAqua);
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+  background-color: var(--brandBlue);
+  color: var(--brandPink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Home Screen */
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.products li {
+  padding: 0;
+  flex: 0 1 34rem;
+  margin: 1rem;
+  height: 40rem;
+  border-bottom: 0.5rem var(--brandBlue) solid;
+  background-color: white;
+  padding: 1rem;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product a {
+  color: var(--brandRed);
+}
+.product a:hover {
+  color: var(--brandAqua);
+}
+
+.product-image {
+  max-width: 34rem;
+  max-height: 34 rem;
+}
+.product-name {
+  font-size: 2rem;
+  color: var(--brandRed);
+  font-family: "EB Garamond", serif;
+}
+.product-price {
+  font-size: 2rem;
+}
+.product-description {
+  font-size: 1.2rem;
+}
+.product-rating {
+  margin-bottom: 1rem;
+}
+/* Sidebar */
+.brand button {
+  font-size: 3rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--brandPink);
+  cursor: pointer;
+}
+.sidebar {
+  position: fixed;
+  transform: translateX(-30rem);
+  transition: all 0.5s;
+  width: 30rem;
+  background-color: var(--brandBlue);
+  height: 100%;
+}
+.sidebar.open {
+  transform: translateX(0);
+}
+.sidebar button {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--brandPink);
+  padding-top: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0.5rem;
+  top: 2.5rem;
+  border: var(--brandPink) solid;
+  background-color: var(--brandBlue);
+}
+.sidebar h3 {
+  color: var(--brandAqua);
+  padding: 1rem;
+}
+.sidebar li {
+  padding: 1rem;
+}
