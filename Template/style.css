@@ -1,0 +1,60 @@
+:root {
+  --brandBlue: #1b71b8;
+  --brandBackground: #f2daee;
+  --brandGrey: #232528;
+  --brandBlack: #000000;
+  --brandPink: #f2daee;
+  --brandAqua: #a2dcf3;
+  --brandRed: #ed4748;
+}
+
+html {
+  font-size: 62.5%; /*1 16px * 62.5 = 10px = 1rem */
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.6rem "Nunito Sans", Arial, Helvetica, sans-serif;
+  height: 100vh;
+  margin: 0;
+  color: var(--brandBlue);
+  background-color: var(--brandBackground) !important;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main" "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+.header {
+  grid-area: header;
+  background-color: var(--brandBlue);
+  color: var(--brandPink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.header-links a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--brandPink);
+}
+.header-links a:hover {
+  color: var(--brandAqua);
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+  background-color: var(--brandBlue);
+  color: var(--brandPink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
