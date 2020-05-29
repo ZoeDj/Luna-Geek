@@ -15,6 +15,9 @@ html {
 a {
   text-decoration: none;
 }
+li {
+  list-style: none;
+}
 body {
   font: 1.6rem "Nunito Sans", Arial, Helvetica, sans-serif;
   height: 100vh;
@@ -68,7 +71,6 @@ a:visited {
   flex-wrap: wrap;
 }
 .products li {
-  list-style: none;
   padding: 0;
   flex: 0 1 34rem;
   margin: 1rem;
@@ -107,4 +109,45 @@ a:visited {
 }
 .product-rating {
   margin-bottom: 1rem;
+}
+/* Sidebar */
+.brand button {
+  font-size: 3rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--brandPink);
+  cursor: pointer;
+}
+.sidebar {
+  position: fixed;
+  transform: translateX(-30rem);
+  width: 30rem;
+  background-color: var(--brandBlue);
+  height: 100%;
+}
+.sidebar.open {
+  transform: translateX(0);
+}
+.sidebar button {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--brandPink);
+  padding-top: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0.5rem;
+  top: 2.5rem;
+  border: var(--brandPink) solid;
+  background-color: var(--brandBlue);
+}
+.sidebar h3 {
+  color: var(--brandAqua);
+  padding: 1rem;
+}
+.sidebar li {
+  padding: 1rem;
 }
