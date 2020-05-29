@@ -12,13 +12,15 @@ html {
   font-size: 62.5%; /*1 16px * 62.5 = 10px = 1rem */
   box-sizing: border-box;
 }
-
+a {
+  text-decoration: none;
+}
 body {
   font: 1.6rem "Nunito Sans", Arial, Helvetica, sans-serif;
   height: 100vh;
   margin: 0;
   color: var(--brandBlue);
-  background-color: var(--brandBackground) !important;
+  background-color: var(--brandBackground);
 }
 .grid-container {
   display: grid;
@@ -41,7 +43,6 @@ body {
 .header-links a,
 a:link,
 a:visited {
-  text-decoration: none;
   color: var(--brandPink);
 }
 .header-links a:hover {
@@ -57,4 +58,53 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Home Screen */
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.products li {
+  list-style: none;
+  padding: 0;
+  flex: 0 1 34rem;
+  margin: 1rem;
+  height: 40rem;
+  border-bottom: 0.5rem var(--brandBlue) solid;
+  background-color: white;
+  padding: 1rem;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product a {
+  color: var(--brandRed);
+}
+.product a:hover {
+  color: var(--brandAqua);
+}
+
+.product-image {
+  max-width: 34rem;
+  max-height: 34 rem;
+}
+.product-name {
+  font-size: 2rem;
+  color: var(--brandRed);
+  font-family: "EB Garamond", serif;
+}
+.product-price {
+  font-size: 2rem;
+}
+.product-description {
+  font-size: 1.2rem;
+}
+.product-rating {
+  margin-bottom: 1rem;
 }
