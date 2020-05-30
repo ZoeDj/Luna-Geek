@@ -25,13 +25,16 @@ body {
   color: var(--brandBlue);
   background-color: var(--brandBackground);
 }
+#root {
+  height: 100%;
+}
 .grid-container {
   display: grid;
   grid-template-areas:
     "header"
     "main" "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: 7rem 1fr 4rem;
   height: 100%;
 }
 .header {
@@ -41,7 +44,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 .header-links a,
 a:link,
@@ -91,10 +94,9 @@ a:visited {
 .product a:hover {
   color: var(--brandAqua);
 }
-
 .product-image {
   max-width: 34rem;
-  max-height: 34 rem;
+  max-height: 30rem;
 }
 .product-name {
   font-size: 2rem;
@@ -151,4 +153,25 @@ a:visited {
 }
 .sidebar li {
   padding: 1rem;
+}
+.logo {
+  padding-top: 1rem;
+}
+
+/*Product Details */
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.details-image {
+  flex: 2 1 60rem;
+  padding-left: 10rem;
+}
+.details-info {
+  flex: 1 1 30rem;
+}
+.details-action {
+  flex: 1 1 30rem;
 }
