@@ -7,28 +7,44 @@ function ProductPage(props) {
   const product = data.products.find((x) => x._id === props.match.params.id);
   return (
     <div>
-      <div>
+      <div className="back-to-products">
         <Link to="/">Back to Products</Link>
       </div>
       <div className="details">
         <div className="details-image">
-          <img sec={product.image} alt="product"></img>
+          <img src={product.image} alt="product"></img>
         </div>
         <div className="details-info">
           <ul>
             <li>
-              <h4>{product.name}</h4>
+              <h3>{product.name}</h3>
             </li>
             <li>
-              <h5>
-                {product.rating} Stars ({product.numReview} Reviews)
-              </h5>
+              {product.rating} Stars {product.numReviews} Reviews
+            </li>
+            <li>Price: $ {product.price}</li>
+            <li>Description: {product.description}</li>
+          </ul>
+        </div>
+        <div className="details-action">
+          <ul>
+            <li>Price: $ {product.price}</li>
+            <li>Status: {product.status}</li>
+            <li>
+              Qty:
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+              </select>
             </li>
             <li>
-              <b>${product.price}</b>
-            </li>
-            <li>
-              <p>{product.description}</p>
+              <button>Add to Card</button>
             </li>
           </ul>
         </div>

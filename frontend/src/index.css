@@ -1,8 +1,6 @@
 :root {
   --brandBlue: #1b71b8;
-  --brandBackground: #f2daee;
   --brandGrey: #232528;
-  --brandBlack: #000000;
   --brandPink: #f2daee;
   --brandAqua: #a2dcf3;
   --brandRed: #ed4748;
@@ -23,7 +21,7 @@ body {
   height: 100vh;
   margin: 0;
   color: var(--brandBlue);
-  background-color: var(--brandBackground);
+  background-color: var(--brandPink);
 }
 #root {
   height: 100%;
@@ -159,19 +157,54 @@ a:visited {
 }
 
 /*Product Details */
+.back-to-products {
+  padding: 1rem;
+}
 .details {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+  margin-right: 10rem;
+  padding: 1rem;
 }
 .details-image {
   flex: 2 1 60rem;
   padding-left: 10rem;
 }
+.details-image img {
+  max-width: 60rem;
+}
 .details-info {
   flex: 1 1 30rem;
 }
+.details-info ul,
+.details-action ul {
+  padding: 0;
+}
+.details-info li,
+.details-action li {
+  margin: 1rem;
+}
 .details-action {
   flex: 1 1 30rem;
+  border: 0.1rem var(--brandBlue) solid;
+  border-radius: 0.5rem;
+}
+
+.details-action ul li:last-child {
+  display: flex;
+  flex-direction: column;
+}
+.details-action button {
+  background-color: var(--brandAqua);
+  border: 0.1rem var(--brandBlue) solid;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--brandBlue);
+  cursor: pointer;
+}
+.details-action button:hover {
+  background-color: #86d4f3;
+  border: 0.1rem var(--brandBlue) solid;
 }
