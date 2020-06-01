@@ -12,7 +12,7 @@ function ProductPage(props) {
       </div>
       <div className="details">
         <div className="details-image">
-          <img src={product.image} alt="product"></img>
+          <img src={product.image} alt="product" />
         </div>
         <div className="details-info">
           <ul>

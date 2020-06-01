@@ -49,7 +49,7 @@ function App() {
           </ul>
         </aside>
         <main className="main">
-          <img class="hero" src="./wave.png" alt="hero" width="100%" />
+          <img className="hero" src="./wave.png" alt="hero" width="100%" />
           <div className="content">
             <Route path="/products/:id" component={ProductPage} />
             <Route path="/" exact={true} component={HomePage} />
