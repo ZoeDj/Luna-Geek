@@ -197,6 +197,7 @@ a:visited {
   flex: 1 1 30rem;
   border: 0.1rem var(--brandBlue) solid;
   border-radius: 0.5rem;
+  background-color: #ffffff70;
 }
 
 .details-action ul li:last-child {
