@@ -9,6 +9,7 @@ export default {
       description: "Handmade",
       rating: 5.0,
       numReviews: 10,
+      countInStock: 50,
     },
     {
       _id: "2",
@@ -19,6 +20,7 @@ export default {
       description: "Handmade",
       rating: 5.0,
       numReviews: 15,
+      countInStock: 40,
     },
     {
       _id: "3",
@@ -29,6 +31,7 @@ export default {
       description: "Handmade",
       rating: 5.0,
       numReviews: 15,
+      countInStock: 50,
     },
     {
       _id: "4",
@@ -39,6 +42,7 @@ export default {
       description: "Handmade",
       rating: 4.8,
       numReviews: 8,
+      countInStock: 20,
     },
     {
       _id: "5",
@@ -49,6 +53,7 @@ export default {
       description: "Handmade",
       rating: 4.8,
       numReviews: 8,
+      countInStock: 20,
     },
     {
       _id: "6",
@@ -59,6 +64,7 @@ export default {
       description: "Handmade",
       rating: 4.8,
       numReviews: 8,
+      countInStock: 20,
     },
     {
       _id: "7",
@@ -69,6 +75,7 @@ export default {
       description: "andmade",
       rating: 4.8,
       numReviews: 8,
+      countInStock: 20,
     },
   ],
 };
