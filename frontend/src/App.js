@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
+import CartPage from "./pages/CartPage";
 
 function App() {
   const openMenu = () => {
@@ -27,8 +28,8 @@ function App() {
             </Link>
           </div>
           <div className="header-links">
-            <a href="card.html">Card</a>
-            <a href="signin.html">Sign In</a>
+            <a href="/cart">Cart</a>
+            <a href="/signin">Sign In</a>
           </div>
         </header>
         <aside className="sidebar">
@@ -51,7 +52,8 @@ function App() {
         <main className="main">
           <img className="hero" src="./wave.png" alt="hero" width="100%" />
           <div className="content">
-            <Route path="/products/:id" component={ProductPage} />
+            <Route path="/product/:id" component={ProductPage} />
+            <Route path="/cart/:id?" component={CartPage} />
             <Route path="/" exact={true} component={HomePage} />
           </div>
         </main>

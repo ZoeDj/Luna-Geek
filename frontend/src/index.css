@@ -216,3 +216,6 @@ a:visited {
   background-color: #86d4f3;
   border: 0.1rem var(--brandBlue) solid;
 }
+.card {
+  background-color: yellow;
+}
