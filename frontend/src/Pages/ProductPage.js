@@ -17,8 +17,8 @@ function ProductPage(props) {
     };
   }, []);
 
-  const handleAddToCard = () => {
-    props.history.push("/cart" + props.match.params.id + "?qty=" + qty);
+  const handleAddToCart = () => {
+    props.history.push("/cart/" + props.match.params.id + "?qty=" + qty);
   };
 
   return (
@@ -70,7 +70,7 @@ function ProductPage(props) {
               </li>
               <li>
                 {product.countInStock > 0 && (
-                  <button onClick={handleAddToCard}>Add to Card</button>
+                  <button onClick={handleAddToCart}>Add to Cart</button>
                 )}
               </li>
             </ul>
