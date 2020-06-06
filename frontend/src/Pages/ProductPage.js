@@ -70,7 +70,9 @@ function ProductPage(props) {
               </li>
               <li>
                 {product.countInStock > 0 && (
-                  <button onClick={handleAddToCart}>Add to Cart</button>
+                  <button className="primary-button" onClick={handleAddToCart}>
+                    Add to Cart
+                  </button>
                 )}
               </li>
             </ul>
