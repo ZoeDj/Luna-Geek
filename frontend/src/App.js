@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
+import SigninPage from "./pages/SigninPage";
 
 function App() {
   const openMenu = () => {
@@ -29,7 +30,7 @@ function App() {
           </div>
           <div className="header-links">
             <a href="/cart">Cart</a>
-            <a href="/signin">Sign In</a>
+            <Link to="/signin">Signin</Link>
           </div>
         </header>
         <aside className="sidebar">
@@ -52,6 +53,7 @@ function App() {
         <main className="main">
           <img className="hero" src="./wave.png" alt="hero" width="100%" />
           <div className="content">
+            <Route path="/signin" component={SigninPage} />
             <Route path="/product/:id" component={ProductPage} />
             <Route path="/cart/:id?" component={CartPage} />
             <Route path="/" exact={true} component={HomePage} />

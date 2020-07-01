@@ -43,7 +43,7 @@ function ProductPage(props) {
               <li>
                 {product.rating} Stars {product.numReviews} Reviews
               </li>
-              <li>Price: $ {product.price}</li>
+              <li>Price: ${product.price}</li>
               <li>Description: {product.description}</li>
             </ul>
           </div>

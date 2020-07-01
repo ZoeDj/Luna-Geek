@@ -217,6 +217,15 @@ a:visited {
   background-color: #86d4f3;
   border: none;
 }
+.secondary-button:hover {
+  background-color: #ecd3e8;
+  border: none;
+}
+.register-buttons a,
+a:link,
+a:visited {
+  color: var(--brandBlue);
+}
 
 /* Cart */
 .cart {
@@ -266,4 +275,45 @@ a:visited {
   flex: 1 1;
   font-size: 2.5rem;
   text-align: right;
+}
+
+/* Form */
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  border: 0.1rem var(--brandAqua) solid;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 32rem;
+  background-color: #ffffff70;
+}
+.form-container li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 1rem;
+  border: 0.1rem var(--brandAqua) solid;
+  border-radius: 0.5rem;
+}
+
+.secondary-button {
+  background-color: var(--brandPink);
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--brandBlue);
+  cursor: pointer;
+}
+.register-question {
+  padding-top: 3rem;
 }
