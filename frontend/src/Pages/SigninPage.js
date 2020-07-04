@@ -2,20 +2,27 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
+import { signin } from "../actions/userActions";
 
 function SigninPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const userSignin = useSelector((state) => state.userSignin);
+  const { loading, userInfo, error } = userSignin;
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (userInfo) {
+      props.history.push("/");
+    }
     return () => {
       //
     };
-  }, []);
+  }, [userInfo]);
 
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(signin(email, password));
   };
   return (
     <div className="form">
@@ -23,7 +30,11 @@ function SigninPage(props) {
         <ul className="form-container">
           <h2>Sign-In</h2>
           <li>
-            <label for="email">Email</label>
+            {loading && <div>Loading...</div>}
+            {error && <div>{error}</div>}
+          </li>
+          <li>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
@@ -32,7 +43,7 @@ function SigninPage(props) {
             />
           </li>
           <li>
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
