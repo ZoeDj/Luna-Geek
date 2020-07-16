@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { signin } from "../actions/userActions";
+import { register } from "../actions/userActions";
 
-function SigninPage(props) {
+function RegisterPage(props) {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const userSignin = useSelector((state) => state.userSignin);
-  const { loading, userInfo, error } = userSignin;
+  const [repassword, setRePassword] = useState("");
+  const userRegister = useSelector((state) => state.userRegister);
+  const { loading, userInfo, error } = userRegister;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,16 +24,25 @@ function SigninPage(props) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(signin(email, password));
+    dispatch(register(name, email, password));
   };
   return (
     <div className="form">
       <form onSubmit={submitHandler}>
         <ul className="form-container">
-          <h2>Sign-In</h2>
+          <h2>Create Account</h2>
           <li>
             {loading && <div>Loading...</div>}
             {error && <div>{error}</div>}
+          </li>
+          <li>
+            <label htmlFor="name">Name</label>
+            <input
+              type="name"
+              name="name"
+              id="name"
+              onChange={(e) => setName(e.target.value)}
+            />
           </li>
           <li>
             <label htmlFor="email">Email</label>
@@ -52,15 +63,24 @@ function SigninPage(props) {
             />
           </li>
           <li>
+            <label htmlFor="rePassword">Re-Enter Password</label>
+            <input
+              type="password"
+              name="rePassword"
+              id="rePassword"
+              onChange={(e) => setRePassword(e.target.value)}
+            />
+          </li>
+          <li>
             <button type="submit" className="primary-button">
-              Sign In
+              Register
             </button>
           </li>
-          <li className="register-question">New to LunaGeek?</li>
+          <li className="register-question">Already have an Account?</li>
           <li>
             <button className="secondary-button">
-              <Link className="register-button" to="/register">
-                Create Account
+              <Link className="signin-button" to="/signin">
+                Sign In
               </Link>
             </button>
           </li>
@@ -69,4 +89,4 @@ function SigninPage(props) {
     </div>
   );
 }
-export default SigninPage;
+export default RegisterPage;
