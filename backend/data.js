@@ -72,7 +72,7 @@ export default {
       category: "Button",
       image: "./wp-circle1.jpg",
       price: 2,
-      description: "andmade",
+      description: "Handmade",
       rating: 4.8,
       numReviews: 8,
       countInStock: 20,
