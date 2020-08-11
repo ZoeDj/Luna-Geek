@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { saveProduct, listProducts } from "../actions/productActions";
+import {
+  saveProduct,
+  listProducts,
+  deleteProduct,
+} from "../actions/productActions";
 
 function ProductsPage(props) {
   const [modalVisable, setModalVisable] = useState(false);
@@ -20,14 +24,23 @@ function ProductsPage(props) {
     success: successSave,
     error: errorSave,
   } = productSave;
+  const productDelete = useSelector((state) => state.productDelete);
+  const {
+    loading: loadingDelete,
+    success: successDelete,
+    error: errorDelete,
+  } = productDelete;
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (successSave) {
+      setModalVisable(false);
+    }
     dispatch(listProducts());
     return () => {
       //
     };
-  }, []);
+  }, [successSave, successDelete]);
 
   const openModal = (product) => {
     setModalVisable(true);
@@ -53,11 +66,16 @@ function ProductsPage(props) {
       })
     );
   };
+  const deleteHandler = (product) => {
+    dispatch(deleteProduct(product._id));
+  };
   return (
     <div className="content content-margined">
       <div className="product-header">
         <h3>Products</h3>
-        <button onClick={() => openModal({})}>Create Product</button>
+        <button className="primary-button" onClick={() => openModal({})}>
+          Create Product
+        </button>
       </div>
       {modalVisable && (
         <div className="form">
@@ -149,7 +167,7 @@ function ProductsPage(props) {
       )}
 
       <div className="product-list">
-        <table>
+        <table className="table">
           <thead>
             <tr>
               <th>ID</th>
@@ -161,14 +179,25 @@ function ProductsPage(props) {
           </thead>
           <tbody>
             {products.map((product) => (
-              <tr>
+              <tr key={product._id}>
                 <td>{product._id}</td>
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>{product.category}</td>
                 <td>
-                  <button onClick={() => openModal(product)}>Edit</button>
-                  <button>Delete</button>
+                  <button
+                    className="primary-button"
+                    onClick={() => openModal(product)}
+                  >
+                    Edit
+                  </button>{" "}
+                  <button
+                    className="primary-button"
+                    style={{ border: "0.1px solid red" }}
+                    onClick={() => deleteHandler(product)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

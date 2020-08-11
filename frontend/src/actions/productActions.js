@@ -8,6 +8,9 @@ import {
   PRODUCT_SAVE_REQUEST,
   PRODUCT_SAVE_SUCCESS,
   PRODUCT_SAVE_FAIL,
+  PRODUCT_DELETE_REQUEST,
+  PRODUCT_DELETE_SUCCESS,
+  PRODUCT_DELETE_FAIL,
 } from "../constants/productConstant";
 import Axios from "axios";
 
@@ -30,7 +33,7 @@ const saveProduct = (product) => async (dispatch, getState) => {
     if (!product._id) {
       const { data } = await Axios.post("/api/products", product, {
         headers: {
-          Authorization: "Zoe" + userInfo.token,
+          Authorization: "Luna" + userInfo.token,
         },
       });
       dispatch({ type: PRODUCT_SAVE_SUCCESS, payload: data });
@@ -40,7 +43,7 @@ const saveProduct = (product) => async (dispatch, getState) => {
         product,
         {
           headers: {
-            Authorization: "Zoe" + userInfo.token,
+            Authorization: "Luna" + userInfo.token,
           },
         }
       );
@@ -61,4 +64,21 @@ const detailsProduct = (productId) => async (dispatch) => {
   }
 };
 
-export { listProducts, detailsProduct, saveProduct };
+const deleteProduct = (productId) => async (dispatch, getState) => {
+  try {
+    const {
+      userSignin: { userInfo },
+    } = getState();
+    dispatch({ type: PRODUCT_DELETE_REQUEST, payload: productId });
+    const { data } = await Axios.delete("/api/products/" + productId, {
+      headers: {
+        Authorization: "Luna" + userInfo.token,
+      },
+    });
+    dispatch({ type: PRODUCT_DELETE_SUCCESS, payload: data, success: true });
+  } catch (error) {
+    dispatch({ type: PRODUCT_DELETE_FAIL, payload: error.message });
+  }
+};
+
+export { listProducts, detailsProduct, saveProduct, deleteProduct };

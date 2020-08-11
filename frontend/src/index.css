@@ -317,3 +317,23 @@ input {
 .register-question {
   padding-top: 3rem;
 }
+/* ProductPage */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content-margined {
+  margin: 1rem;
+}
+
+.table {
+  width: 100%;
+}
+th {
+  text-align: left;
+}
+tbody > tr:nth-child(odd) {
+  background-color: #f9e7f6;
+}
