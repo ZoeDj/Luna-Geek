@@ -21,7 +21,6 @@ body {
   height: 100vh;
   margin: 0;
   color: var(--brandBlue);
-  background-color: var(--brand);
 }
 #root {
   height: 100%;
@@ -32,7 +31,7 @@ body {
     "header"
     "main" "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 7rem 1fr 4rem;
+  grid-template-rows: 7rem 1fr 3rem;
   height: 100%;
 }
 .header {
@@ -224,7 +223,8 @@ a:visited {
 .register-buttons a,
 a:link,
 a:visited {
-  color: var(--brandBlue);
+  color: var(--brandPink);
+  padding-left: 15px;
 }
 
 /* Cart */

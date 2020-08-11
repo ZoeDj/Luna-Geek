@@ -8,7 +8,7 @@ function RegisterPage(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [repassword, setRePassword] = useState("");
+  const [rePassword, setRePassword] = useState("");
   const userRegister = useSelector((state) => state.userRegister);
   const { loading, userInfo, error } = userRegister;
   const dispatch = useDispatch();

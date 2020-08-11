@@ -41,6 +41,12 @@ function App() {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
+            {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <a href="#">Admin</a>
+                <Link to="/products">Products</Link>
+              </div>
+            )}
           </div>
         </header>
         <aside className="sidebar">

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { signin } from "../actions/userActions";
 import { saveProduct } from "../actions/productActions";
 
 function ProductsPage(props) {
@@ -12,8 +10,6 @@ function ProductsPage(props) {
   const [category, setCategory] = useState("");
   const [countInStock, setCountInStock] = useState("");
   const [description, setDescription] = useState("");
-  const [rating, setRating] = useState("");
-  const [numReviews, setNumReviews] = useState("");
   const productSave = useSelector((state) => state.productSave);
   const {
     loading: loadingSave,
@@ -38,8 +34,6 @@ function ProductsPage(props) {
         category,
         description,
         countInStock,
-        rating,
-        numReviews,
       })
     );
   };
@@ -95,15 +89,6 @@ function ProductsPage(props) {
               name="category"
               id="category"
               onChange={(e) => setCategory(e.target.value)}
-            />
-          </li>
-          <li>
-            <label htmlFor="rating">Rating</label>
-            <input
-              type="number"
-              name="rating"
-              id="rating"
-              onChange={(e) => setRating(e.target.value)}
             />
           </li>
           <li>
