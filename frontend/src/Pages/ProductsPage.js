@@ -73,7 +73,7 @@ function ProductsPage(props) {
     <div className="content content-margined">
       <div className="product-header">
         <h3>Products</h3>
-        <button className="primary-button" onClick={() => openModal({})}>
+        <button className="primary-button create" onClick={() => openModal({})}>
           Create Product
         </button>
       </div>

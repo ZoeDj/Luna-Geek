@@ -48,13 +48,14 @@ function CartPage(props) {
                 <div>
                   Qty:
                   <select
+                    className="select"
                     value={item.qty}
                     onChange={(e) =>
                       dispatch(addToCart(item.product, e.target.value))
                     }
                   >
                     {[...Array(item.countInStock).keys()].map((x) => (
-                      <option key={x + 1} value={x + 1}>
+                      <option className="option" key={x + 1} value={x + 1}>
                         {x + 1}
                       </option>
                     ))}

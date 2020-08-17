@@ -10,10 +10,13 @@ function SigninPage(props) {
   const userSignin = useSelector((state) => state.userSignin);
   const { loading, userInfo, error } = userSignin;
   const dispatch = useDispatch();
+  const redirect = props.location.search
+    ? props.location.search.split("=")[1]
+    : "/";
 
   useEffect(() => {
     if (userInfo) {
-      props.history.push("/");
+      props.history.push(redirect);
     }
     return () => {
       //
@@ -58,11 +61,14 @@ function SigninPage(props) {
           </li>
           <li className="register-question">New to LunaGeek?</li>
           <li>
-            <button className="secondary-button">
-              <Link className="register-button" to="/register">
-                Create Account
-              </Link>
-            </button>
+            <Link
+              className="register"
+              to={
+                redirect === "/" ? "register" : "register?redirect=" + redirect
+              }
+            >
+              Create Account
+            </Link>
           </li>
         </ul>
       </form>

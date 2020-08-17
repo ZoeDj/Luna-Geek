@@ -13,9 +13,13 @@ function RegisterPage(props) {
   const { loading, userInfo, error } = userRegister;
   const dispatch = useDispatch();
 
+  const redirect = props.location.search
+    ? props.location.search.split("=")[1]
+    : "/";
+
   useEffect(() => {
     if (userInfo) {
-      props.history.push("/");
+      props.history.push(redirect);
     }
     return () => {
       //
@@ -76,13 +80,14 @@ function RegisterPage(props) {
               Register
             </button>
           </li>
-          <li className="register-question">Already have an Account?</li>
           <li>
-            <button className="secondary-button">
-              <Link className="signin-button" to="/signin">
-                Sign In
-              </Link>
-            </button>
+            Already have an Account?
+            <Link
+              className="signin"
+              to={redirect === "/" ? "signin" : "signin?redirect=" + redirect}
+            >
+              Sign In
+            </Link>
           </li>
         </ul>
       </form>

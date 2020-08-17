@@ -1,13 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+
 :root {
-  --brandBlue: #1b71b8;
+  /* --brandBlue: #1b71b8; */
+  --brandBlue: #453bff;
   --brandGrey: #232528;
-  --brandPink: #f2daee;
+  /* --brandPink: #f2daee; */
+  --brandPink: #f7eaec;
+  /* peach #fed8ce */
   --brandAqua: #a2dcf3;
   --brandRed: #ed4748;
 }
 
 html {
-  font-size: 62.5%; /*1 16px * 62.5 = 10px = 1rem */
+  font-size: 90%;
   box-sizing: border-box;
 }
 a {
@@ -17,7 +22,7 @@ li {
   list-style: none;
 }
 body {
-  font: 1.6rem "Nunito Sans", Arial, Helvetica, sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   height: 100vh;
   margin: 0;
   color: var(--brandBlue);
@@ -55,6 +60,10 @@ a:visited {
   grid-area: main;
   background-color: var(--brandPink);
 }
+.content {
+  margin: 30px;
+}
+
 .footer {
   grid-area: footer;
   background-color: var(--brandBlue);
@@ -125,6 +134,7 @@ a:visited {
   width: 30rem;
   background-color: var(--brandBlue);
   height: 100%;
+  z-index: 1;
 }
 .sidebar.open {
   transform: translateX(0);
@@ -153,6 +163,12 @@ a:visited {
 }
 .logo {
   padding-top: 1rem;
+}
+
+.wave {
+  transform: rotate(180deg);
+  margin-top: -1px;
+  z-index: 2;
 }
 
 /*Product Details */
@@ -205,10 +221,10 @@ a:visited {
 }
 .primary-button {
   background-color: var(--brandAqua);
-  font-size: 1.6rem;
+  font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.8rem;
   color: var(--brandBlue);
   cursor: pointer;
 }
@@ -277,6 +293,15 @@ a:visited {
   text-align: right;
 }
 
+.select {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  color: var(--brandBlue);
+}
+
 /* Form */
 
 .form {
@@ -322,10 +347,6 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-.content-margined {
-  margin: 1rem;
 }
 
 .table {
