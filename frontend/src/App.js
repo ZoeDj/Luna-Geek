@@ -7,6 +7,7 @@ import CartPage from "./pages/CartPage";
 import SigninPage from "./pages/SigninPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProductsPage from "./pages/ProductsPage";
+import ShippingPage from "./pages/ShippingPage";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
           </svg>
           <div className="content">
             <Route path="/products" component={ProductsPage} />
+            <Route path="/shipping" component={ShippingPage} />
             <Route path="/signin" component={SigninPage} />
             <Route path="/register" component={RegisterPage} />
             <Route path="/product/:id" component={ProductPage} />
