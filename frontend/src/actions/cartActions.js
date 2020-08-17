@@ -3,6 +3,7 @@ import {
   CART_ADD_ITEM,
   CART_REMOVE_ITEM,
   CART_SAVE_SHIPPING,
+  CART_SAVE_PAYMENT,
 } from "../constants/cartConstants";
 import Cookie from "js-cookie";
 
@@ -39,4 +40,9 @@ const removeFromCart = (productId) => (dispatch, getState) => {
 const saveShipping = (data) => (dispatch) => {
   dispatch({ type: CART_SAVE_SHIPPING, payload: data });
 };
-export { addToCart, removeFromCart, saveShipping };
+
+const savePayment = (data) => (dispatch) => {
+  dispatch({ type: CART_SAVE_PAYMENT, payload: data });
+};
+
+export { addToCart, removeFromCart, saveShipping, savePayment };

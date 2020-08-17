@@ -10,16 +10,12 @@ function ShippingPage(props) {
   const [city, setCity] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [country, setCountry] = useState("");
-  const { loading, userInfo, error } = saveShipping;
-  const dispatch = useDispatch();
 
-  const redirect = props.location.search
-    ? props.location.search.split("=")[1]
-    : "/";
+  const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(saveShipping(address, city, zipCode, country));
+    dispatch(saveShipping({ address, city, zipCode, country }));
     props.history.push("payment");
   };
   return (
@@ -30,11 +26,7 @@ function ShippingPage(props) {
           <ul className="form-container">
             <h2>Shipping</h2>
             <li>
-              {loading && <div>Loading...</div>}
-              {error && <div>{error}</div>}
-            </li>
-            <li>
-              <label htmlFor="name">Address</label>
+              <label htmlFor="address">Address</label>
               <input
                 type="address"
                 name="address"
@@ -43,7 +35,7 @@ function ShippingPage(props) {
               />
             </li>
             <li>
-              <label htmlFor="name">City</label>
+              <label htmlFor="city">City</label>
               <input
                 type="city"
                 name="city"
@@ -52,7 +44,7 @@ function ShippingPage(props) {
               />
             </li>
             <li>
-              <label htmlFor="name">Zip Code</label>
+              <label htmlFor="zipCode">Zip Code</label>
               <input
                 type="zipCode"
                 name="zipCode"
@@ -70,7 +62,7 @@ function ShippingPage(props) {
               />
             </li>
             <li>
-              <button type="button" className="primary-button">
+              <button type="submit" className="primary-button">
                 Continue
               </button>
             </li>

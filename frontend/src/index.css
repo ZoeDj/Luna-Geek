@@ -6,10 +6,11 @@
   --brandGrey: #232528;
   /* --brandPink: #f2daee; */
   --brandPink: #f7eaec;
-  /* peach #fed8ce */
+  /* #f4eef3 */
   --brandAqua: #a2dcf3;
   --brandRed: #ed4748;
   --brandLightGray: #c0c0c0;
+  --brandLightWhite: #ffffff;
 }
 
 html {
@@ -87,7 +88,7 @@ a:visited {
   margin: 1rem;
   height: 40rem;
   border-bottom: 0.1rem yellow solid;
-  background-color: white;
+  background-color: var(--brandLightWhite);
   padding: 1rem;
 }
 .product {
@@ -213,7 +214,7 @@ a:visited {
   flex: 1 1 30rem;
   border: 0.1rem var(--brandAqua) solid;
   border-radius: 0.5rem;
-  background-color: #ffffff70;
+  background-color: var(--brandLightWhite);
 }
 
 .details-action ul li:last-child {
@@ -261,7 +262,7 @@ a:visited {
   margin-top: 2rem;
   border: 0.1rem var(--brandAqua) solid;
   border-radius: 0.5rem;
-  background-color: #ffffff70;
+  background-color: var(--brandLightWhite);
 }
 
 .cart-list-container {
@@ -317,7 +318,7 @@ a:visited {
   border-radius: 0.5rem;
   padding: 2rem;
   width: 32rem;
-  background-color: #ffffff70;
+  background-color: var(--brandLightWhite);
 }
 .form-container li {
   display: flex;
@@ -357,14 +358,14 @@ th {
   text-align: left;
 }
 tbody > tr:nth-child(odd) {
-  background-color: #f9e7f6;
+  background-color: var(--brandLightWhite);
 }
 
 /* Checkout Steps */
 .checkout-steps {
   display: flex;
   justify-content: space-between;
-  width: 40rem;
+  width: 36rem;
   padding: 1rem;
   margin: 0 auto;
 }
@@ -377,4 +378,48 @@ tbody > tr:nth-child(odd) {
 .checkout-steps > div.active {
   border-top: 0.3rem var(--brandBlue) solid;
   color: var(--brandBlue);
+}
+
+/* Place Order */
+.placeorder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.placeorder-info {
+  flex: 3 1 60rem;
+}
+
+.placeorder-action {
+  flex: 1 1 10rem;
+  border: 0.1rem var(--brandLightGray) solid;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: var(--brandLightWhite);
+  margin: 0 1rem 1rem 1rem;
+}
+
+.placeorder-info > div {
+  border: 0.1rem var(--brandLightGray) solid;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: var(--brandLightWhite);
+  margin: 1rem;
+}
+.placeorder-info > div:first-child {
+  margin-top: 0rem;
+}
+.placeorder-action > ul {
+  padding: 0rem;
+}
+.placeorder-action > ul > li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.placeorder-action > ul > li:last-child {
+  border-top: 0.1rem var(--brandLightGray) solid;
+  padding-top: 0.5rem;
+  color: var(--brandRed);
 }
