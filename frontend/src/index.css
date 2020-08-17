@@ -9,6 +9,7 @@
   /* peach #fed8ce */
   --brandAqua: #a2dcf3;
   --brandRed: #ed4748;
+  --brandLightGray: #c0c0c0;
 }
 
 html {
@@ -357,4 +358,23 @@ th {
 }
 tbody > tr:nth-child(odd) {
   background-color: #f9e7f6;
+}
+
+/* Checkout Steps */
+.checkout-steps {
+  display: flex;
+  justify-content: space-between;
+  width: 40rem;
+  padding: 1rem;
+  margin: 0 auto;
+}
+.checkout-steps > div {
+  border-top: 0.3rem var(--brandLightGray) solid;
+  color: var(--brandLightGray);
+  flex: 1 1;
+  padding-top: 1rem;
+}
+.checkout-steps > div.active {
+  border-top: 0.3rem var(--brandBlue) solid;
+  color: var(--brandBlue);
 }

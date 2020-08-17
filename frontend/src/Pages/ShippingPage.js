@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { saveShipping } from "../actions/cartActions";
+import CheckoutSteps from "../constants/CheckoutSteps";
 
 function ShippingPage(props) {
   const [address, setAddress] = useState("");
@@ -19,59 +20,63 @@ function ShippingPage(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(saveShipping(address, city, zipCode, country));
+    props.history.push("payment");
   };
   return (
-    <div className="form">
-      <form onSubmit={submitHandler}>
-        <ul className="form-container">
-          <h2>Shipping</h2>
-          <li>
-            {loading && <div>Loading...</div>}
-            {error && <div>{error}</div>}
-          </li>
-          <li>
-            <label htmlFor="name">Address</label>
-            <input
-              type="address"
-              name="address"
-              id="address"
-              onChange={(e) => setAddress(e.target.value)}
-            />
-          </li>
-          <li>
-            <label htmlFor="name">City</label>
-            <input
-              type="city"
-              name="city"
-              id="city"
-              onChange={(e) => setCity(e.target.value)}
-            />
-          </li>
-          <li>
-            <label htmlFor="name">Zip Code</label>
-            <input
-              type="zipCode"
-              name="zipCode"
-              id="zipCode"
-              onChange={(e) => setZipCode(e.target.value)}
-            />
-          </li>
-          <li>
-            <label htmlFor="name">Country</label>
-            <input
-              type="country"
-              name="country"
-              id="country"
-              onChange={(e) => setCountry(e.target.value)}
-            />
-          </li>
-          <li>
-            <button type="button" className="primary-button">
-              Continue
-            </button>
-          </li>
-        </ul>
-      </form>
+    <div>
+      <CheckoutSteps step1 step2></CheckoutSteps>
+      <div className="form">
+        <form onSubmit={submitHandler}>
+          <ul className="form-container">
+            <h2>Shipping</h2>
+            <li>
+              {loading && <div>Loading...</div>}
+              {error && <div>{error}</div>}
+            </li>
+            <li>
+              <label htmlFor="name">Address</label>
+              <input
+                type="address"
+                name="address"
+                id="address"
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </li>
+            <li>
+              <label htmlFor="name">City</label>
+              <input
+                type="city"
+                name="city"
+                id="city"
+                onChange={(e) => setCity(e.target.value)}
+              />
+            </li>
+            <li>
+              <label htmlFor="name">Zip Code</label>
+              <input
+                type="zipCode"
+                name="zipCode"
+                id="zipCode"
+                onChange={(e) => setZipCode(e.target.value)}
+              />
+            </li>
+            <li>
+              <label htmlFor="name">Country</label>
+              <input
+                type="country"
+                name="country"
+                id="country"
+                onChange={(e) => setCountry(e.target.value)}
+              />
+            </li>
+            <li>
+              <button type="button" className="primary-button">
+                Continue
+              </button>
+            </li>
+          </ul>
+        </form>
+      </div>
     </div>
   );
 }
