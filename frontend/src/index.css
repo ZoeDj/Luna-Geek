@@ -238,11 +238,17 @@ a:visited {
   background-color: #ecd3e8;
   border: none;
 }
-.register-buttons a,
+.register,
+.signin a,
 a:link,
 a:visited {
-  color: var(--brandPink);
-  padding-left: 15px;
+  color: var(--brandAqua);
+  padding-right: 1rem;
+}
+
+.signin:hover,
+.register:hover {
+  text-decoration: underline;
 }
 
 /* Cart */

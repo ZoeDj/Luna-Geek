@@ -67,10 +67,10 @@ function PlaceOrderPage(props) {
                 {cartItems.length === 0 ? (
                   <div>Cart is empty</div>
                 ) : (
-                  cartItems.map((item, item_id) => (
-                    <li>
+                  cartItems.map((item) => (
+                    <li key={item.item_id}>
                       <div className="cart-image">
-                        <img src={item.image} alt="product" key="item_id" />
+                        <img src={item.image} alt="product" />
                       </div>
                       <div className="cart-name">
                         <Link to={"/product/" + item.product}>{item.name}</Link>

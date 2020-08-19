@@ -3,7 +3,7 @@ import {
   ORDER_CREATE_REQUEST,
   ORDER_CREATE_SUCCESS,
   ORDER_CREATE_FAIL,
-} from "../constants/orderConstatnts";
+} from "../constants/orderConstants";
 
 const createOrder = (order) => async (dispatch, getState) => {
   try {
