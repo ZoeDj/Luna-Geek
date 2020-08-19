@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { saveShipping } from "../actions/cartActions";
-import CheckoutSteps from "../constants/CheckoutSteps";
+import CheckoutSteps from "../components/CheckoutSteps";
 
 function ShippingPage(props) {
   const [address, setAddress] = useState("");

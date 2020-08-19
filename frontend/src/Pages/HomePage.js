@@ -17,6 +17,7 @@ function HomePage(props) {
       //
     };
   }, []);
+
   return loading ? (
     <div>Loading...</div>
   ) : error ? (

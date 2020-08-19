@@ -34,7 +34,9 @@ function RegisterPage(props) {
     <div className="form">
       <form onSubmit={submitHandler}>
         <ul className="form-container">
-          <h2>Create Account</h2>
+          <li>
+            <h2>Create Account</h2>
+          </li>
           <li>
             {loading && <div>Loading...</div>}
             {error && <div>{error}</div>}

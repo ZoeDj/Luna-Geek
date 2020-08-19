@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import CheckoutSteps from "../constants/CheckoutSteps";
+import CheckoutSteps from "../components/CheckoutSteps";
+import { createOrder } from "../actions/orderActions";
 
 function PlaceOrderPage(props) {
   const cart = useSelector((state) => state.cart);
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { loading, success, error, order } = orderCreate;
 
   const { cartItems, shipping, payment } = cart;
   if (!shipping.address) {
@@ -21,12 +24,24 @@ function PlaceOrderPage(props) {
   const dispatch = useDispatch();
 
   const placeOrderHandler = () => {
-    //create an order
+    dispatch(
+      createOrder({
+        orderItems: cartItems,
+        shipping,
+        payment,
+        itemsPrice,
+        shippingPrice,
+        taxPrice,
+        totalPrice,
+      })
+    );
   };
 
-  const checkoutHandler = () => {
-    props.history.push("/signin?redirect=shipping");
-  };
+  useEffect(() => {
+    if (success) {
+      props.history.push("/order/" + order._id);
+    }
+  }, [success]);
 
   return (
     <div>
@@ -52,10 +67,10 @@ function PlaceOrderPage(props) {
                 {cartItems.length === 0 ? (
                   <div>Cart is empty</div>
                 ) : (
-                  cartItems.map((item) => (
+                  cartItems.map((item, item_id) => (
                     <li>
                       <div className="cart-image">
-                        <img src={item.image} alt="product" />
+                        <img src={item.image} alt="product" key="item_id" />
                       </div>
                       <div className="cart-name">
                         <Link to={"/product/" + item.product}>{item.name}</Link>
@@ -75,7 +90,6 @@ function PlaceOrderPage(props) {
           <ul>
             <li>
               <button
-                onClick={checkoutHandler}
                 className="primary-button"
                 disabled={cartItems.length === 0}
                 onClick={placeOrderHandler}
