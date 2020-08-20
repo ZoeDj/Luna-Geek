@@ -63,7 +63,7 @@ a:visited {
   background-color: var(--brandPink);
 }
 .content {
-  margin: 30px;
+  margin: 0 30px 20px 30px;
 }
 
 .footer {
@@ -84,13 +84,15 @@ a:visited {
 }
 .products li {
   padding: 0;
-  flex: 0 1 34rem;
+  flex: 0 1 15rem;
+  background-color: white;
+  height: 20rem;
   margin: 1rem;
-  height: 40rem;
-  border-bottom: 0.1rem yellow solid;
-  background-color: var(--brandLightWhite);
-  border-radius: 1.5rem;
-  padding: 1rem;
+  border-radius: 5rem 0rem 0rem 0rem;
+  padding: 1rem 0rem 0.8rem 1rem;
+}
+.products ul {
+  padding: 0;
 }
 .product {
   display: flex;
@@ -105,22 +107,32 @@ a:visited {
   color: var(--brandAqua);
 }
 .product-image {
-  max-width: 34rem;
-  max-height: 30rem;
-  border-radius: 1rem;
+  max-width: 15rem;
+  max-height: 15rem;
+  border: 0.1rem white solid;
+}
+/* .product-image:nth-child(even) {
+  border-radius: 5rem 0rem 5rem 0rem;
+} */
+.product-image:nth-child(odd) {
+  border-radius: 5rem 0rem 5rem 0rem;
 }
 .product-name {
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: var(--brandBlue);
 }
 .product-price {
-  font-size: 2rem;
+  font-size: 1.1rem;
 }
 .product-description {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 .product-rating {
-  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+ul {
+  padding: 0;
 }
 /* Sidebar */
 .brand button {
