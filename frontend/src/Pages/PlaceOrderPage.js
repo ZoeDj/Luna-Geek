@@ -37,11 +37,11 @@ function PlaceOrderPage(props) {
     );
   };
 
-  useEffect(() => {
-    if (success) {
-      props.history.push("/order/" + order._id);
-    }
-  }, [success]);
+  // useEffect(() => {
+  //   if (success) {
+  //     props.history.push("/order/" + order._id);
+  //   }
+  // }, [success]);
 
   return (
     <div>

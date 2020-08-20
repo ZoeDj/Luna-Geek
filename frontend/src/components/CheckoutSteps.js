@@ -1,5 +1,4 @@
 import React from "react";
-import ProductsPage from "../pages/ProductsPage";
 
 function CheckoutSteps(props) {
   return (

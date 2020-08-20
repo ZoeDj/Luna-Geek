@@ -6,12 +6,8 @@ import CheckoutSteps from "../components/CheckoutSteps";
 
 function PaymentPage(props) {
   const [paymentMethod, setPaymentMethod] = useState("");
-  const { loading, userInfo, error } = savePayment;
-  const dispatch = useDispatch();
 
-  const redirect = props.location.search
-    ? props.location.search.split("=")[1]
-    : "/";
+  const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();

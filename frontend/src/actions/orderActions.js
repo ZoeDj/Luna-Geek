@@ -15,7 +15,7 @@ const createOrder = (order) => async (dispatch, getState) => {
       data: { data: newOrder },
     } = await Axios.post("/api/orders", order, {
       headers: {
-        Authorization: "Luna" + userInfo.token,
+        Authorization: " Luna " + userInfo.token,
       },
     });
     dispatch({ type: ORDER_CREATE_SUCCESS, payload: newOrder });
