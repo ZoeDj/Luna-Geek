@@ -1,10 +1,10 @@
 import express from "express";
 import Order from "../models/orderModel";
-// import { isAuth } from "../util";
+import { isAuth } from "../util";
 
 const router = express.Router();
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", isAuth, async (req, res) => {
   const order = await Order.findOne({ _id: req.params.id });
   if (order) {
     res.send(order);
@@ -13,7 +13,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", isAuth, async (req, res) => {
   const newOrder = new Order({
     orderItems: req.body.orderItems,
     user: req.user._id,

@@ -89,6 +89,7 @@ a:visited {
   height: 40rem;
   border-bottom: 0.1rem yellow solid;
   background-color: var(--brandLightWhite);
+  border-radius: 1.5rem;
   padding: 1rem;
 }
 .product {
@@ -106,6 +107,7 @@ a:visited {
 .product-image {
   max-width: 34rem;
   max-height: 30rem;
+  border-radius: 1rem;
 }
 .product-name {
   font-size: 2rem;
