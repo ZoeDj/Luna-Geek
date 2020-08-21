@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;1,400&display=swap");
 
 :root {
   /* --brandBlue: #1b71b8; */
@@ -86,7 +86,7 @@ a:visited {
   padding: 0;
   flex: 0 1 15rem;
   background-color: white;
-  height: 20rem;
+  height: 18rem;
   margin: 1rem;
   border-radius: 5rem 0rem 0rem 0rem;
   padding: 1rem 0rem 0.8rem 1rem;
@@ -182,9 +182,23 @@ ul {
 }
 
 .wave {
-  transform: rotate(180deg);
   margin-top: -1px;
   z-index: 2;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-style: italic;
+}
+
+svg text {
+  fill: var(--brandPink);
+  font-size: 1.8rem;
+  text-transform: lowercase;
+}
+
+svg text {
+  visibility: hidden;
+}
+svg path:hover + text {
+  visibility: visible;
 }
 
 /*Product Details */

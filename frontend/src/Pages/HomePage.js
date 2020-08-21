@@ -39,9 +39,9 @@ function HomePage(props) {
             </div>
             <div className="product-price">$ {product.price}</div>
             <div className="product-description">{product.description}</div>
-            <div className="product-rating">
+            {/* <div className="product-rating">
               {product.rating} Stars {product.numReviews} Reviewes
-            </div>
+            </div> */}
           </div>
         </li>
       ))}
