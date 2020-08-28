@@ -40,7 +40,7 @@ function CartPage(props) {
             cartItems.map((item) => (
               <li>
                 <div className="cart-image">
-                  <img src={item.image} alt="product" />
+                  <img src={`../` + item.image} alt="product" />
                 </div>
                 <div className="cart-name">
                   <Link to={"/product/" + item.product}>{item.name}</Link>

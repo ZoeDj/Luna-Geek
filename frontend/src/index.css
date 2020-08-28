@@ -225,7 +225,9 @@ svg path:hover + text {
   padding-left: 10rem;
 }
 .details-image img {
-  max-width: 60rem;
+  max-width: 40rem;
+  border-radius: 5rem;
+  margin-bottom: 2rem;
 }
 .details-info {
   flex: 1 1 30rem;
@@ -239,8 +241,7 @@ svg path:hover + text {
   margin: 1rem;
 }
 .details-action {
-  flex: 1 1 30rem;
-  border: 0.1rem var(--brandAqua) solid;
+  flex: 5;
   border-radius: 0.5rem;
   background-color: var(--brandLightWhite);
 }
