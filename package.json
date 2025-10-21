@@ -12,11 +12,15 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.20",
-    "nodemon": "^2.0.4"
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.1",
+    "nodemon": "^3.1.10"
   },
   "scripts": {
-    "start": "nodemon --watch backend --exec babel-node backend/server.js"
-  }
+    "start": "nodemon --watch backend --exec babel-node backend/server.js",
+    "server": "nodemon index.js --ignore client",
+    "dev": "nodemon --exec npm start"
+  },
+  "proxy": "http://127.0.0.1:5000"
 }

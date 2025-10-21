@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/ProductPage";
-import CartPage from "./pages/CartPage";
-import SigninPage from "./pages/SigninPage";
-import RegisterPage from "./pages/RegisterPage";
-import ProductsPage from "./pages/ProductsPage";
-import ShippingPage from "./pages/ShippingPage";
-import PaymentPage from "./pages/PaymentPage";
-import PlaceOrderPage from "./pages/PlaceOrderPage";
+import HomePage from "./Pages/HomePage";
+import ProductPage from "./Pages/ProductPage";
+import CartPage from "./Pages/CartPage";
+import SigninPage from "./Pages/SigninPage";
+import RegisterPage from "./Pages/RegisterPage";
+import ProductsPage from "./Pages/ProductsPage";
+import ShippingPage from "./Pages/ShippingPage";
+import PaymentPage from "./Pages/PaymentPage";
+import PlaceOrderPage from "./Pages/PlaceOrderPage";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
             )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
-                <a href="#">Admin</a>
+                <Link href="#">Admin</Link>
                 <Link to="/products">Products</Link>
               </div>
             )}
@@ -62,17 +62,15 @@ function App() {
           <button className="sidebar-close-button" onClick={closeMenu}>
             x
           </button>
-          <ul>
-            <li>
-              <a href="index.html">Stickers</a>
-            </li>
-            <li>
-              <a href="index.html">Buttons</a>
-            </li>
-            <li>
-              <a href="index.html">Shirts</a>
-            </li>
-          </ul>
+          <BrowserRouter>
+            <Link to="products">Products</Link>
+
+            <Link to="stickers">Stickers</Link>
+
+            <Link to="buttons">Buttons</Link>
+
+            <Link to="shirts">Shirts</Link>
+          </BrowserRouter>
         </aside>
         <main className="main">
           <div>
@@ -96,6 +94,9 @@ function App() {
 
           <div className="content">
             <Route path="/products" component={ProductsPage} />
+            <Route path="/stickers" component={ProductsPage} />
+            <Route path="/buttons" component={ProductsPage} />
+            <Route path="/shirts" component={ProductsPage} />
             <Route path="/shipping" component={ShippingPage} />
             <Route path="/payment" component={PaymentPage} />
             <Route path="/placeorder" component={PlaceOrderPage} />

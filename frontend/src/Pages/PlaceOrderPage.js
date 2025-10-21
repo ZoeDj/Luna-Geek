@@ -7,7 +7,7 @@ import { createOrder } from "../actions/orderActions";
 function PlaceOrderPage(props) {
   const cart = useSelector((state) => state.cart);
   const orderCreate = useSelector((state) => state.orderCreate);
-  const { loading, success, error, order } = orderCreate;
+  const { success, order } = orderCreate;
 
   const { cartItems, shipping, payment } = cart;
   if (!shipping.address) {
@@ -41,7 +41,7 @@ function PlaceOrderPage(props) {
     if (success) {
       props.history.push("/order/" + order._id);
     }
-  }, [success]);
+  }, [order._id, props.history, success]);
 
   return (
     <div>
