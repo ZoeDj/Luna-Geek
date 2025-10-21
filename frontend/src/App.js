@@ -16,12 +16,12 @@ function App() {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
-  const openMenu = () => {
-    document.querySelector(".sidebar").classList.add("open");
-  };
-  const closeMenu = () => {
-    document.querySelector(".sidebar").classList.remove("open");
-  };
+  // const openMenu = () => {
+  //   document.querySelector(".sidebar").classList.add("open");
+  // };
+  // const closeMenu = () => {
+  //   document.querySelector(".sidebar").classList.remove("open");
+  // };
   let words = [
     "______________________________Just go for it and put yourself out there",
     "______________________________Recognize and embrace your uniqueness",
@@ -32,7 +32,7 @@ function App() {
       <div className="grid-container">
         <header className="header">
           <div className="brand">
-            <button onClick={openMenu}>&#9776;</button>
+            {/* <button onClick={openMenu}>&#9776;</button> */}
             <Link to="/">
               <img
                 className="logo"
@@ -57,21 +57,23 @@ function App() {
             )}
           </div>
         </header>
-        <aside className="sidebar">
+        {/* <aside className="sidebar">
           <h3>Shopping Categories</h3>
           <button className="sidebar-close-button" onClick={closeMenu}>
             x
           </button>
-          <BrowserRouter>
-            <Link to="products">Products</Link>
-
+         <BrowserRouter>
+            <Link to="/" onClick={closeMenu}>
+              Stickers and Pins
+            </Link>
+           <Link to="/products">Products</Link>
             <Link to="stickers">Stickers</Link>
 
             <Link to="buttons">Buttons</Link>
 
             <Link to="shirts">Shirts</Link>
           </BrowserRouter>
-        </aside>
+        </aside>*/}
         <main className="main">
           <div>
             <svg className="wave" viewBox="0 0 1440 320">
